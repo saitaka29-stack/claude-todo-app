@@ -13,8 +13,14 @@
       <p class="count" id="count"></p>
     </header>
 
+    <div class="progress" aria-label="達成率">
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      <span id="progress-text" class="progress-text"></span>
+    </div>
+
     <form id="new-form" autocomplete="off">
       <input id="new-input" type="text" placeholder="やることを入力して Enter" maxlength="200" required>
+      <input id="new-due" type="date" aria-label="期限（任意）" title="期限（任意）">
       <button type="submit">追加</button>
     </form>
 
@@ -31,6 +37,11 @@
       <button type="button" id="clear-done">完了済みを削除</button>
     </footer>
   </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+    <span>タスクを削除しました</span>
+    <button type="button" id="undo">元に戻す</button>
+  </div>
   <script src="app.js"></script>
 </body>
 </html>
